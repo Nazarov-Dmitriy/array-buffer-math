@@ -1,3 +1,2 @@
-import Character from "./js/Character.js";
-import Magician from "./js/Magician.js";
-
+import Character from './js/Character';
+import Magician from './js/Magician';

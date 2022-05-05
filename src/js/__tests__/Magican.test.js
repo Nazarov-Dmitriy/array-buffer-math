@@ -2,8 +2,13 @@ import Magician from '../Magician';
 
 describe('Проверака атаки на растояние и дурмана', () => {
   test('Проверка атаки', () => {
-    expect((new Magician().boardАttack(2))).toBe(90);  });
+    const result = new Magician();
+    result.attackDistance = 2;
+    expect(result.attackDistance).toBe(90);
+  });
   test('should sum', () => {
-    expect((new Magician().stoned(2))).toBe(85);
+    const result = new Magician();
+    result.stoned = 2;
+    expect(result.stoned).toBe(85);
   });
 });
