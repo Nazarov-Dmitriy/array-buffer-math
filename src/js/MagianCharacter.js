@@ -12,8 +12,8 @@ export default class MagianCharacter extends Character {
   }
 
   get attackDistance() {
-    return (this.board > 1 && this.board <= 5) ? this.attack * (1 - 0.1 * (this.board - 1))
-     : this.attack;
+    return (this.board > 1 && this.board <= 5) ? this.attack * (1 - 0.1 * (this.board - 1)) :
+      this.attack;
   }
 
   set stoned(board) {
