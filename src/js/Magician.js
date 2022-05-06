@@ -1,4 +1,4 @@
-import MagianCharacter from './MagianCharacter';
+import MagianCharacter from './MagianCharacter.js';
 
 export default class Magician extends MagianCharacter {
   constructor(name, type, health, level) {
@@ -7,3 +7,8 @@ export default class Magician extends MagianCharacter {
     this.defence = 40;
   }
 }
+
+let a = new Magician();
+a.attack = 2;
+console.log(a);
+console.log(a.attack);
