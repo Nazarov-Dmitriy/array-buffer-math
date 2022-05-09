@@ -1,33 +1,31 @@
-import Character from './Character.js';
+import Character from './Character';
 
 export default class MagianCharacter extends Character {
   constructor(name, type, health, level) {
     super(name, type, health, level);
-    this.stoned = false;
-    this.board = 1;
+    this.attackChatacter = 0;
+    this.stonedBollean = false;
   }
 
-  set attack(board) {   
-    this.board = board;
+  set stoned(bollean) {
+    this.stonedBollean = bollean;
+  }
+
+  set attack(attack) {
+    this.attackChatacter = attack;
   }
 
   get attack() {
-
-    return  (this.board > 1 && this.board <= 5) ? this.attack * (1 - 0.1 * (this.board - 1)) :
-      this.attack;
-    // if (this.stoned) {
-    //   return attack - Math.log2(this.board) * 5;
-    // } else {
-    //   return attack;
-    // }
+    this.attackChatacter = (this.board > 1 && this.board <= 5) ?
+      this.attackChatacter * (1 - 0.1 * (this.board - 1)) :
+      this.attackChatacter;
+    return this.attackChatacter;
   }
 
-  // set stoned(board) {
-  //   this.stoned = true;
-  //   this.board = board;
-  // }
-
-  // get stoned() {
-  //   return this.attack;
-  // }
+  get stoned() {
+    if (this.stonedBollean) {
+      this.attackChatacter -= Math.log2(this.board) * 5;
+    }
+    return this.attackChatacter;
+  }
 }

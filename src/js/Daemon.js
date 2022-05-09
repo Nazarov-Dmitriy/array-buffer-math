@@ -1,4 +1,4 @@
-import MagianCharacter from './MagianCharacter  ';
+import MagianCharacter from './MagianCharacter';
 
 export default class Daemon extends MagianCharacter {
   constructor(name, type, health, level) {
