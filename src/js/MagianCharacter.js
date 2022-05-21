@@ -7,25 +7,25 @@ export default class MagianCharacter extends Character {
     this.stonedBollean = false;
   }
 
-  set stoned(bollean) {
-    this.stonedBollean = bollean;
-  }
-
   set attack(attack) {
     this.attackChatacter = attack;
   }
 
   get attack() {
-    this.attackChatacter = (this.board > 1 && this.board <= 5) ?
-      this.attackChatacter * (1 - 0.1 * (this.board - 1)) :
-      this.attackChatacter;
+    if (this.board > 1 && this.board <= 5) {
+      if (this.stonedBollean) {
+        return this.attackChatacter * (1 - 0.1 * (this.board - 1)) - Math.log2(this.board) * 5;
+      }
+      return this.attackChatacter * (1 - 0.1 * (this.board - 1));
+    }
     return this.attackChatacter;
   }
 
+  set stoned(bollean) {
+    this.stonedBollean = bollean;
+  }
+
   get stoned() {
-    if (this.stonedBollean) {
-      this.attackChatacter -= Math.log2(this.board) * 5;
-    }
-    return this.attackChatacter;
+    return this.attack;
   }
 }

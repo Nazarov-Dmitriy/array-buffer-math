@@ -7,7 +7,6 @@ describe('Проверака атаки на растояние и дурман�
   });
   test('should sum', () => {
     const result = new Magician();
-    result.attack;
     result.stoned = true;
     expect(result.stoned).toBe(85);
   });
